@@ -6,7 +6,7 @@ from flask_jwt_extended import (
     get_jwt,
 )
 
-from helpers import check_password, get_group_list
+from helpers import check_password, get_group_list, get_positions_list
 from models import User, db, Group
 
 
@@ -89,3 +89,14 @@ def group_detail(group_id):
         db.session.commit()
 
         return {'status': 'SUCCESS', 'message': 'group is updated'}
+    
+@api_bp.route('/positions', methods=['GET', 'POST'])
+@jwt_required()
+def positions():
+
+    if request.method == 'GET':
+        positions = get_positions_list()
+
+        return {'list': positions}
+    
+        

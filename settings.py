@@ -1,3 +1,6 @@
+from datetime import timedelta
+
+
 DATABASE = {
     'host': 'localhost',
     'database': 'db_school_two',
@@ -11,3 +14,4 @@ SQLALCHEMY_DATABASE_URI = (
 SECRET_KEY = 'secret_key'
 JWT_SECRET_KEY = 'your_jwt_secret_key'
 JWT_TOKEN_LOCATION = ['headers']
+JWT_ACCESS__TOKEN_EXPIRES = timedelta(seconds=20)
