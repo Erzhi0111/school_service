@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from flask import g
 from functools import wraps
 import psycopg2
@@ -17,3 +18,12 @@ def db_connect(func):
             g.db_conn.close()
 
     return wrapper
+=======
+import psycopg2
+
+conn = psycopg2.connect(host='localhost',
+                        database='db_school', 
+                        user='postgres', 
+                        password='postgres',
+                        port=5432)
+>>>>>>> myrepo/main

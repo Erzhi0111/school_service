@@ -1,5 +1,6 @@
 'use strict'
 
+<<<<<<< HEAD
 
 // Логика добавления группы в Базу Данных
 
@@ -12,6 +13,20 @@ function addData() {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
+=======
+const data = {
+    name: 'Название группу'
+}
+
+const group_add_btn = document.getElementById('group_add_btn')
+
+group_add_btn.onclick = () => {
+    fetch('http://localhost:5000/groups', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': getCookie('csrftoken')
+>>>>>>> myrepo/main
         },
         body: JSON.stringify(data),
     }).then(response => {
@@ -20,18 +35,23 @@ function addData() {
         }
         return response.json()
     }).then(data => {
+<<<<<<< HEAD
         if (data.status == 'FAILED') {
             alert('Такая группа уже существует в БД')
         } else {
             alert('Данные успено сохранены в БД')
             window.location.reload()
         }
+=======
+        console.log('Данные успено сохранены в БД,', data)
+>>>>>>> myrepo/main
     }).catch(error => {
         console.log('Ошибка при добавлении в БД,', error)
     })
 }
 
 
+<<<<<<< HEAD
 // Логика удаления группы из базы данных
 
 function deleteGroup(groupId) {
@@ -88,3 +108,11 @@ function saveGroupData() {
         alert('Ошибка при обновлении данных в БД', error)
     })
 }
+=======
+const getCookie = (name) => {
+    return document.cookie.split(';').reduce((prev, c) => {
+        let arr = c.split('=');
+        return (arr[0].trim() === name) ? arr[1] : prev;
+    }, undefined);
+};
+>>>>>>> myrepo/main

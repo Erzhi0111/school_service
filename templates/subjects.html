@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 
+<<<<<<< HEAD
 {% block style %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/subjects.css') }}">
 {% endblock %}
@@ -19,13 +20,20 @@
             </button>
         </div>
     </div>
+=======
+{% block content %}
+    <h1>Список предметов</h1>
+>>>>>>> myrepo/main
     <table class="table">
         <thead>
             <tr>
             <th scope="col">ID</th>
             <th scope="col">Название</th>
+<<<<<<< HEAD
             <th scope="col">Редактировать</th>
             <th scope="col">Удалить</th>
+=======
+>>>>>>> myrepo/main
             </tr>
         </thead>
         <tbody>
@@ -33,6 +41,7 @@
                 <tr>
                     <th scope="row">{{ subject.id }}</th>
                     <td>{{ subject.name }}</td>
+<<<<<<< HEAD
                     <td>
                         <button type="button" 
                                 class="btn btn-secondary"
@@ -52,10 +61,13 @@
                                 <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06m6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528M8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5"/>
                             </svg>
                         </button>
+=======
+>>>>>>> myrepo/main
                 </tr>
             {% endfor %}
         </tbody>
     </table>
+<<<<<<< HEAD
 
     <div class="modal" tabindex="-1" id="addModal">
         <div class="modal-dialog">
@@ -110,3 +122,6 @@
 {% block script %}
     <script src="{{ url_for('static', filename='/js/subjects.js') }}"></script>
 {% endblock %}
+=======
+{% endblock %}
+>>>>>>> myrepo/main
